@@ -1,6 +1,7 @@
 .navbar {
   background-color: var(--dark);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px 0 15px 0 !important;
 }
 
 .navbar-brand {
@@ -12,23 +13,27 @@
   color: var(--main-white);
 }
 
-.bag {
-  position: relative;
-  display: flex;
+.bag-box {
+    /* background-color: aliceblue; */
+}
+
+.bag{
+    text-decoration: none;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .bag span {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(140%, 2px);
-  width: 100px;
-  height: 20px;
   background-color: var(--main-white);
   color: var(--main-red);
   border-radius: 100%;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10px;
 }

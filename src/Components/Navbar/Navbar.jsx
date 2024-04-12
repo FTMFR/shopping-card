@@ -4,8 +4,8 @@ import { BsBag } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <div className="navbar navbar-expand-sm p-3  d-flex">
-      <div className="container">
+    <div className="navbar navbar-expand-sm d-flex">
+      <div className="container-md">
         <a href="/" className="navbar-brand">
           SabzLearn Shop
         </a>
@@ -35,7 +35,7 @@ const Navbar = () => {
         </ul>
         <div className="bag-box">
           <a href="/" className="bag">
-            <BsBag />
+            <BsBag className="text-white h-50 w-50" />
             <span className="bag-products-count">0</span>
           </a>
         </div>
