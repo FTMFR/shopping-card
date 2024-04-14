@@ -33,6 +33,17 @@ const ProductSection = ({ title, infos }) => {
                       setTimeout(() => {
                         contextData.setIsShowToast(false);
                       }, 3000);
+                      let newUserCardProduct = {
+                        id: contextData.userCart.length + 1,
+                        title: product.title,
+                        price: product.price,
+                        count: 1,
+                      };
+
+                      contextData.setUserCart((prevProducts) => [
+                        ...prevProducts,
+                        newUserCardProduct,
+                      ]);
                     }}
                   >
                     Add to card
