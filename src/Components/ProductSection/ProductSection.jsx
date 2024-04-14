@@ -33,17 +33,35 @@ const ProductSection = ({ title, infos }) => {
                       setTimeout(() => {
                         contextData.setIsShowToast(false);
                       }, 3000);
-                      let newUserCardProduct = {
-                        id: contextData.userCart.length + 1,
-                        title: product.title,
-                        price: product.price,
-                        count: 1,
-                      };
 
-                      contextData.setUserCart((prevProducts) => [
-                        ...prevProducts,
-                        newUserCardProduct,
-                      ]);
+                      let isInUSerCard = contextData.userCart.some(
+                        (bagProduct) => bagProduct.title === product.title
+                      );
+
+                      if (!isInUSerCard) {
+                        let newUserCardProduct = {
+                          id: contextData.userCart.length + 1,
+                          title: product.title,
+                          price: product.price,
+                          count: 1,
+                        };
+
+                        contextData.setUserCart((prevProducts) => [
+                          ...prevProducts,
+                          newUserCardProduct,
+                        ]);
+                      } else {
+                        let userCount = [...contextData.userCart];
+
+                        userCount.some((bagPro) => {
+                          if (bagPro.title === product.title) {
+                            bagPro.count += 1;
+                            return true;
+                          }
+                        });
+
+                        contextData.setUserCart(userCount);
+                      }
                     }}
                   >
                     Add to card

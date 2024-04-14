@@ -17,6 +17,7 @@ function App() {
     <ProductsContext.Provider
       value={{
         allProducts,
+        setAllproducts,
         userCart,
         setUserCart,
         isShowToast,

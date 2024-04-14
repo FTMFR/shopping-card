@@ -53,7 +53,7 @@ const Card = () => {
                 >
                   More Information
                 </a>
-                <p className="number">${product.count}</p>
+                <p className="number">{product.count}</p>
               </div>
             </div>
           </div>
