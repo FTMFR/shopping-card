@@ -6,7 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 const Card = () => {
   return (
     // Add active class to show bag sidebar
-    <aside className="bag-sidebar active">
+    <aside className="bag-sidebar">
       <h3 className="bag-title">
         <span>
           <BsBag />
