@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./navbar.css";
 import { BsBag } from "react-icons/bs";
+import ProductsContext from "../../Contexts/ProductContext";
 
 const Navbar = () => {
+  const contextData = useContext(ProductsContext);
+
   return (
     <div className="navbar navbar-expand-sm d-flex">
       <div className="container-md">
@@ -35,7 +38,13 @@ const Navbar = () => {
         </ul>
         <div className="bag-box">
           <a href="/" className="bag">
-            <BsBag className="text-white h-50 w-50" />
+            <BsBag
+              className="text-white h-50 w-50"
+              onClick={(e) => {
+                e.preventDefault();
+                contextData.setIsShowCard(true);
+              }}
+            />
             <span className="bag-products-count">0</span>
           </a>
         </div>

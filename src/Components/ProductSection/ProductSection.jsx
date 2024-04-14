@@ -25,9 +25,10 @@ const ProductSection = ({ title, infos }) => {
                   <p className="price">{product.price}$</p>
                   <br />
                   <a
-                    href="javascript:void(0)"
+                    href="/"
                     className="btn btn-danger"
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.preventDefault();
                       contextData.setIsShowToast(true);
                       setTimeout(() => {
                         contextData.setIsShowToast(false);

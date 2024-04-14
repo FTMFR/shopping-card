@@ -15,7 +15,9 @@ const Toast = () => {
           <button
             type="button"
             className="btn btn-close btn-close-white ms-3"
-            onClick={() => contextData.setIsShowToast(false)}
+            onClick={() => {
+              contextData.setIsShowToast(false);
+            }}
           ></button>
           <div className="toast-body">
             محصول با موفقیت به سبد خرید اضافه گردید

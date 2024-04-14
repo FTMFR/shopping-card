@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./card.css";
 import { BsBag } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
+import ProductsContext from "../../Contexts/ProductContext";
 
 const Card = () => {
+  const contextData = useContext(ProductsContext);
+
   return (
     // Add active class to show bag sidebar
-    <aside className="bag-sidebar">
+    <aside
+      className={`${
+        contextData.isShowCard ? "bag-sidebar active" : "bag-sidebar"
+      }`}
+    >
       <h3 className="bag-title">
         <span>
           <BsBag />
@@ -14,7 +21,12 @@ const Card = () => {
         </span>
 
         <span>
-          <AiOutlineClose className="close-icon" />
+          <AiOutlineClose
+            className="close-icon"
+            onClick={() => {
+              contextData.setIsShowCard(false);
+            }}
+          />
         </span>
       </h3>
       <div className="row bag-wrapper">
@@ -31,7 +43,7 @@ const Card = () => {
               <p className="card-text">Samsung A51</p>
               <p className="price">12000$</p>
               <br />
-              <a href="/" className="btn btn-danger" >
+              <a href="/" className="btn btn-danger">
                 Buy
               </a>
               <a href="/" className="btn btn-outline-dark mt-3 text-capitalize">
